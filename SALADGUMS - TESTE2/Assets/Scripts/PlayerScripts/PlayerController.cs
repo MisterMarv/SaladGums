@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController controller;
     private Vector3 direction;
     public float speed = 8;
+    public Joystick joystick;
 
     //Jump Variables
 
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //Check Game Over
 
         if (PlayerManager.gameOver)
@@ -41,32 +44,36 @@ public class PlayerController : MonoBehaviour
         }
 
         //Moviment
-        float hInput = Input.GetAxis("Horizontal");
+        float hInput = joystick.Horizontal;
 
         direction.x = hInput * speed;
 
         animator.SetFloat("speed", Mathf.Abs(hInput));
 
+        float verticalMove = joystick.Vertical;
         bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
         animator.SetBool("isGrounded", isGrounded);
 
         if (isGrounded)
         {
             doubleJump = true;
-            if (Input.GetButtonDown("Jump"))
+            if (verticalMove >= .1f)
             {
                 Jump();
-            }
 
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                animator.SetTrigger("fireBallAttack");
+                //Attack
+                if (Input.GetKey("F"))
+                {
+                    animator.SetTrigger("fireBallAttack");
+
+                }
             }
+           
         }
         else
         {
             direction.y += gravity * Time.deltaTime; //Add Gravity
-            if(doubleJump & Input.GetButtonDown("Jump"))
+            if(doubleJump & verticalMove >= .1f)
             {
                 JumpTwo();
             }
