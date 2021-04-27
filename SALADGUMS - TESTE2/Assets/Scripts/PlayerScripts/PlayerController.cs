@@ -11,7 +11,12 @@ public class PlayerController : MonoBehaviour
     public CharacterController controller;
     private Vector3 direction;
     public float speed = 8;
+
+    //Buttons Variables
+
     public Joystick joystick;
+    public Button attackButton;
+    public Button jumpButton;
 
     //Jump Variables
 
@@ -19,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public float gravity = -20;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    bool isGrounded;
     public bool doubleJump = true;
 
     //Animator Variables
@@ -50,39 +56,26 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("speed", Mathf.Abs(hInput));
 
-        float verticalMove = joystick.Vertical;
-        bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
         animator.SetBool("isGrounded", isGrounded);
 
         if (isGrounded)
         {
-            doubleJump = true;
-            if (verticalMove >= .1f)
-            {
-                Jump();
-
-                //Attack
-                if (Input.GetKey("F"))
-                {
-                    animator.SetTrigger("fireBallAttack");
-
-                }
-            }
-           
+            jumpButton.interactable = true;
         }
         else
         {
             direction.y += gravity * Time.deltaTime; //Add Gravity
-            if(doubleJump & verticalMove >= .1f)
+            if(doubleJump)
             {
                 JumpTwo();
             }
         }
-
-        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Fireball Attack"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Fireball Attack"))
         {
             return;
         }
+
 
         //Flip Player
         if (hInput != 0)
@@ -94,7 +87,7 @@ public class PlayerController : MonoBehaviour
         controller.Move(direction * Time.deltaTime);
 
         //Reset Z Position
-        if(transform.position.z != 0)
+        if (transform.position.z != 0)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         }
@@ -106,15 +99,36 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void JumpTwo()
+    public void PlayerAttack()
     {
-        animator.SetTrigger("doubleJump");
-        direction.y = jumpForce;
-        doubleJump = false;
+        //Attack
+        if (attackButton)
+        {
+            animator.SetTrigger("fireBallAttack");
+
+        }
     }
 
-    private void Jump()
+    public void Jump()
+    {
+        if (isGrounded)
+        {
+            if (jumpButton)
+            {
+                direction.y = jumpForce;
+            }
+        }
+    }
+
+    public void JumpTwo()
     {
         direction.y = jumpForce;
+        doubleJump = false;
+
+        if (isGrounded == false)
+        {
+            animator.SetTrigger("doubleJump");
+            jumpButton.interactable = false;
+        }
     }
 }

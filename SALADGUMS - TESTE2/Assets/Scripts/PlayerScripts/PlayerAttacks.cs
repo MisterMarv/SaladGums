@@ -14,6 +14,5 @@ public class PlayerAttacks : MonoBehaviour
     {
         GameObject ball = Instantiate(fireBall, fireBallPoint.position, Quaternion.identity);
         ball.GetComponent<Rigidbody>().AddForce(fireBallPoint.forward * fireBallSpeed);
-
     }
 }
