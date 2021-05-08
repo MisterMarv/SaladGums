@@ -69,6 +69,7 @@ public class PlayerManager : MonoBehaviour
                     PlayerPrefs.SetInt("ReachedLevel", nextLevel);
                 }
                 SceneManager.LoadScene(nextLevel);
+                PlayerManager.currentHealth = 100;
             }
 
         }
