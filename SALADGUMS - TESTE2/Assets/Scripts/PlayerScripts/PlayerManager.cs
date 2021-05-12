@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     //Player Variables
 
     public static int currentHealth = 100;
+    public Image damageScreen;
     public Slider healthBar;
 
     //Game Variables
@@ -27,6 +28,8 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Life Settings
+        damageScreen.enabled = false;
         //Reset the number of coins on each level
         numberOfCoins = 0;
         gameOver = winLevel = false;
@@ -39,11 +42,17 @@ public class PlayerManager : MonoBehaviour
         numberOfCoinsText.text = "coins:" + numberOfCoins;
 
         //Update the slider(health) value
+
         healthBar.value = currentHealth;
+
+        if (currentHealth <= 99)
+        {
+            damageScreen.enabled = true;
+        }
 
         //GameOver
 
-        if(currentHealth < 0)
+        if (currentHealth < 0)
         {
             gameOver = true;
             gameOverPanel.SetActive(true);
@@ -69,6 +78,7 @@ public class PlayerManager : MonoBehaviour
                     PlayerPrefs.SetInt("ReachedLevel", nextLevel);
                 }
                 SceneManager.LoadScene(nextLevel);
+                winLevel = false;
                 currentHealth = 100;
             }
 
