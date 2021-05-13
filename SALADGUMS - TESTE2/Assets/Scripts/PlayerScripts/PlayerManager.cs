@@ -14,7 +14,8 @@ public class PlayerManager : MonoBehaviour
 
     //Player Variables
 
-    public static int currentHealth = 100;
+    public static float currentHealth = 100;
+    public float lifeRegenerate = 1f;
     public Image damageScreen;
     public Slider healthBar;
 
@@ -45,9 +46,16 @@ public class PlayerManager : MonoBehaviour
 
         healthBar.value = currentHealth;
 
+
+        //Life Feel and Regenaration (Switch gonna be better right here)
         if (currentHealth <= 99)
         {
             damageScreen.enabled = true;
+
+            if (currentHealth < 50)
+            {
+                currentHealth += lifeRegenerate * Time.deltaTime;
+            }
         }
 
         //GameOver
