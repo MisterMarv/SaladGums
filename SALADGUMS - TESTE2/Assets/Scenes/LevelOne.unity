@@ -3291,6 +3291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3662cc94cd91249bfdf8a6f7021ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageScreen: {fileID: 48970861}
 --- !u!1001 &466148268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10032,7 +10033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfCoinsText: {fileID: 438786167}
-  damageScreen: {fileID: 48970861}
+  lifeRegenerate: 1
   healthBar: {fileID: 1127143500}
   gameOverPanel: {fileID: 1098254665}
   timer: 0

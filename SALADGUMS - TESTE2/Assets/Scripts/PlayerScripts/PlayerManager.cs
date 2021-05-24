@@ -16,7 +16,6 @@ public class PlayerManager : MonoBehaviour
 
     public static float currentHealth = 100;
     public float lifeRegenerate = 1f;
-    public Image damageScreen;
     public Slider healthBar;
 
     //Game Variables
@@ -29,8 +28,6 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Life Settings
-        damageScreen.enabled = false;
         //Reset the number of coins on each level
         numberOfCoins = 0;
         gameOver = winLevel = false;
@@ -46,18 +43,13 @@ public class PlayerManager : MonoBehaviour
 
         healthBar.value = currentHealth;
 
-
         //Life Feel and Regenaration (Switch gonna be better right here)
-        if (currentHealth <= 99)
-        {
-            damageScreen.enabled = true;
 
-            if (currentHealth < 50)
+            if (currentHealth <= 50)
             {
                 currentHealth += lifeRegenerate * Time.deltaTime;
             }
-        }
-
+       
         //GameOver
 
         if (currentHealth < 0)

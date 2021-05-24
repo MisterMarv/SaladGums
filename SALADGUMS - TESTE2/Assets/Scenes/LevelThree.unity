@@ -827,6 +827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3662cc94cd91249bfdf8a6f7021ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageScreen: {fileID: 1521874257}
 --- !u!1 &31239977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,7 +1810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfCoinsText: {fileID: 292271593}
-  damageScreen: {fileID: 1521874257}
+  lifeRegenerate: 1
   healthBar: {fileID: 1542638490}
   gameOverPanel: {fileID: 793474567}
   timer: 0
@@ -5175,6 +5176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3662cc94cd91249bfdf8a6f7021ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageScreen: {fileID: 1521874257}
 --- !u!1 &793474567
 GameObject:
   m_ObjectHideFlags: 0
@@ -8020,6 +8022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3662cc94cd91249bfdf8a6f7021ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageScreen: {fileID: 1521874257}
 --- !u!1 &1130607472
 GameObject:
   m_ObjectHideFlags: 0

@@ -4612,6 +4612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3662cc94cd91249bfdf8a6f7021ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageScreen: {fileID: 1399915574}
 --- !u!1001 &650459599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8431,6 +8432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3662cc94cd91249bfdf8a6f7021ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageScreen: {fileID: 1399915574}
 --- !u!4 &1443069637 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6aa6c938df7fd734ea0780b8f9281b1e, type: 3}
@@ -12947,7 +12949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfCoinsText: {fileID: 1538052571}
-  damageScreen: {fileID: 1399915574}
+  lifeRegenerate: 1
   healthBar: {fileID: 279170172}
   gameOverPanel: {fileID: 2125909624}
   timer: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    //Variables (Alert: This script is about effects in projectiles)
+    //Variables (Alert: This script is about effects of the projectiles)
 
     public GameObject damageEffect;
     public int damageAmount = 40;
