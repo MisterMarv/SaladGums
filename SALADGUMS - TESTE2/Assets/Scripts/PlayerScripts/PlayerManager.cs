@@ -45,7 +45,7 @@ public class PlayerManager : MonoBehaviour
 
         //Life Feel and Regenaration (Switch gonna be better right here)
 
-            if (currentHealth <= 50)
+        if (currentHealth <= 50)
             {
                 currentHealth += lifeRegenerate * Time.deltaTime;
             }
@@ -81,7 +81,6 @@ public class PlayerManager : MonoBehaviour
                 winLevel = false;
                 currentHealth = 100;
             }
-
         }
     }
 }

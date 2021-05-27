@@ -31,7 +31,6 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         //Check Game Over
-
         if (PlayerManager.gameOver)
         {
             animator.enabled = false;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,9 +36,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //Check Game Over
-
         if (PlayerManager.gameOver)
         {
             //Play death animation
@@ -66,7 +65,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             direction.y += gravity * Time.deltaTime; //Add Gravity
-            if(doubleJump)
+            if (doubleJump)
             {
                 JumpTwo();
             }
@@ -98,7 +97,7 @@ public class PlayerController : MonoBehaviour
             this.enabled = false;
         }
     }
-
+    
     public void PlayerAttack()
     {
         //Attack
