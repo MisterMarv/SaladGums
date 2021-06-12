@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     //Movement Variables
 
     public CharacterController controller;
-    private Vector3 direction;
+    public Vector3 direction;
     public float speed = 8;
 
     //Buttons Variables
@@ -49,39 +49,38 @@ public class PlayerController : MonoBehaviour
         }
 
         //Moviment
-        float hInput = joystick.Horizontal;
+            float hInput = joystick.Horizontal;
 
-        direction.x = hInput * speed;
+            direction.x = hInput * speed;
 
-        animator.SetFloat("speed", Mathf.Abs(hInput));
+            animator.SetFloat("speed", Mathf.Abs(hInput));
 
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
-        animator.SetBool("isGrounded", isGrounded);
+            isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundLayer);
+            animator.SetBool("isGrounded", isGrounded);
 
-        if (isGrounded)
-        {
-            jumpButton.interactable = true;
-        }
-        else
-        {
-            direction.y += gravity * Time.deltaTime; //Add Gravity
-            if (doubleJump)
+            if (isGrounded)
             {
-                JumpTwo();
+                jumpButton.interactable = true;
             }
-        }
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Fireball Attack"))
-        {
-            return;
-        }
+            else
+            {
+                direction.y += gravity * Time.deltaTime; //Add Gravity
+                if (doubleJump)
+                {
+                    JumpTwo();
+                }
+            }
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Fireball Attack"))
+            {
+                return;
+            }
 
-
-        //Flip Player
-        if (hInput != 0)
-        {
-            Quaternion newRotation = Quaternion.LookRotation(new Vector3(hInput, 0, 0));
-            model.rotation = newRotation;
-        }
+            //Flip Player
+            if (hInput != 0)
+            {
+                Quaternion newRotation = Quaternion.LookRotation(new Vector3(hInput, 0, 0));
+                model.rotation = newRotation;
+            }   
 
         controller.Move(direction * Time.deltaTime);
 
@@ -97,14 +96,12 @@ public class PlayerController : MonoBehaviour
             this.enabled = false;
         }
     }
-    
     public void PlayerAttack()
     {
         //Attack
         if (attackButton)
         {
             animator.SetTrigger("fireBallAttack");
-
         }
     }
 
