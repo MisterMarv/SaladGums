@@ -61,7 +61,7 @@ public class PlayerManager : MonoBehaviour
             currentHealth = 100;
         }
 
-        if (FindObjectsOfType<Enemy>().Length == 0)
+        if (FindObjectsOfType<Enemy>().Length == 0 && FindObjectsOfType<Boss>().Length == 0)
         {
             //Win Level
             winLevel = true;
@@ -69,7 +69,7 @@ public class PlayerManager : MonoBehaviour
             if(timer > 5)
             {
                 int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
-                if(nextLevel == 4) // Because we didnt have fourth scene
+                if(nextLevel == 7) // Because we didnt have fourth scene
                 {
                     SceneManager.LoadScene(0); //Menu Loaded 
                 }
