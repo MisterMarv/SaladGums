@@ -69,7 +69,7 @@ public class PlayerManager : MonoBehaviour
             if(timer > 5)
             {
                 int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
-                if(nextLevel == 7) // Because we didnt have fourth scene
+                if(nextLevel == 9) // Because we didnt have fourth scene
                 {
                     SceneManager.LoadScene(0); //Menu Loaded 
                 }

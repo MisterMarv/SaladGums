@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public Transform model;
 
+    private void Start()
+    {
+        controller = GetComponent<CharacterController>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -49,7 +53,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Moviment
-            float hInput = joystick.Horizontal;
+           float hInput = joystick.Horizontal;
 
             direction.x = hInput * speed;
 

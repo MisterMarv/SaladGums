@@ -35,19 +35,20 @@ public class Boss : MonoBehaviour
     [Header("SecondShootAttack")]
     [SerializeField] GameObject prefabShoot;
     Vector3 positionShoot;
-    [SerializeField] float minShoot, maxShoot;
+    [SerializeField] float minShoot, maxShoot, heightShoot;
     [SerializeField] float timerSpawn, timeStart;
-    [SerializeField] int lifeBoss;
-    [HideInInspector] public int currentLifeBoss;
+    [HideInInspector] static public int currentLifeBoss = 100;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        InvokeRepeating("BulletRain", timerSpawn, timeStart);
         idleMoveDirection.Normalize();
         attackMoveDirection.Normalize();
         bossRB = GetComponent<Rigidbody2D>();
         damageScreen.enabled = false;
+        BulletRain();
     }
 
     // Update is called once per frame
@@ -57,7 +58,16 @@ public class Boss : MonoBehaviour
         isTouchingUp = Physics2D.OverlapCircle(groundCheckUp.position, groundCheckRadius, groundLayer);
         isTouchingDown = Physics2D.OverlapCircle(groundCheckDown.position, groundCheckRadius, groundLayer);
         isTouchingWall = Physics2D.OverlapCircle(groundCheckWall.position, groundCheckRadius, groundLayer);
-        IdleState();
+        if (currentLifeBoss < 50 && currentLifeBoss > 0)
+        {
+            CancelInvoke("BulletRain");
+            IdleState();
+        }
+        if (currentLifeBoss < 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Ele morreu bobão");
+        }
     }
 
     void IdleState()
@@ -114,5 +124,11 @@ public class Boss : MonoBehaviour
             PlayerManager.currentHealth -= 10;
             damageScreen.enabled = true;
         }
+    }
+    void BulletRain()
+    {
+        positionShoot.x = Random.Range(minShoot, maxShoot);
+        positionShoot.y = 13;
+        Instantiate(prefabShoot, positionShoot, Quaternion.identity);
     }
 }

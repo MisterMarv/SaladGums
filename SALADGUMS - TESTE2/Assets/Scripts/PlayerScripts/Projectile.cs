@@ -56,5 +56,26 @@ public class Projectile : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if (other.tag == "Boss")
+        {
+            if (differentEquip == 1)
+            {
+                Instantiate(damageEffect, transform.position, damageEffect.transform.rotation);
+                other.GetComponent<BossLife>().TakeDamage(damageAmount);
+                Destroy(gameObject);
+            }
+            else if (differentEquip == 2)
+            {
+                Instantiate(damageEffectTwo, transform.position, damageEffectTwo.transform.rotation);
+                other.GetComponent<BossLife>().TakeDamage(damageAmount);
+                Destroy(gameObject);
+            }
+            else if (differentEquip == 3)
+            {
+                Instantiate(damageEffectThree, transform.position, damageEffectThree.transform.rotation);
+                other.GetComponent<BossLife>().TakeDamage(damageAmount);
+                Destroy(gameObject);
+            }
+        }
     }
 }

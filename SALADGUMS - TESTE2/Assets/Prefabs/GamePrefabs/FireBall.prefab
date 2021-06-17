@@ -9823,6 +9823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageEffect: {fileID: 100000, guid: 5c7aeddefe9f8499091b160181d837ed, type: 3}
+  damageEffectTwo: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
+  damageEffectThree: {fileID: 8452627708005483006}
 --- !u!1001 &8452627708005517150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9888,6 +9890,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 457f71e65fc2a4d5a99bb6195c2e029f, type: 3}
+--- !u!1 &8452627708005483006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 457f71e65fc2a4d5a99bb6195c2e029f, type: 3}
+  m_PrefabInstance: {fileID: 8452627708005517150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8452627708005653982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 457f71e65fc2a4d5a99bb6195c2e029f, type: 3}

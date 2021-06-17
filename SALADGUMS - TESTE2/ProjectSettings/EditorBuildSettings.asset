@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/GameLevels/LevelOne.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/LootScenes/LootBossBattle.unity
+    guid: a268d92d96eaaae448781ec90fa73682
+  - enabled: 1
+    path: Assets/Scenes/GameLevels/FirstBoss.unity
+    guid: aa2ee0c62f9bd2248a7e65365509c069
+  - enabled: 1
     path: Assets/Scenes/LootScenes/LootGunTwo.unity
     guid: 7cc68da014b6a93439713b6ca3eb7e27
   - enabled: 1
