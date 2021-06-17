@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletDamage : MonoBehaviour
+public class BulletDamage : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {

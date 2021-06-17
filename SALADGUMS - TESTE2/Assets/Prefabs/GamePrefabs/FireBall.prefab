@@ -4924,6 +4924,7 @@ GameObject:
   - component: {fileID: 19800000}
   - component: {fileID: 19900000}
   - component: {fileID: 5002928257166045575}
+  - component: {fileID: -1469880320374664652}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -9825,6 +9826,19 @@ MonoBehaviour:
   damageEffect: {fileID: 100000, guid: 5c7aeddefe9f8499091b160181d837ed, type: 3}
   damageEffectTwo: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   damageEffectThree: {fileID: 8452627708005483006}
+--- !u!114 &-1469880320374664652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390949725474861883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 707fa00f8a96d8847b7e70bd5df6bb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeDuration: 3
 --- !u!1001 &8452627708005517150
 PrefabInstance:
   m_ObjectHideFlags: 0

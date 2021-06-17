@@ -63,10 +63,9 @@ public class Boss : MonoBehaviour
             CancelInvoke("BulletRain");
             IdleState();
         }
-        if (currentLifeBoss < 0)
+        if (currentLifeBoss <= 0)
         {
             Destroy(gameObject);
-            Debug.Log("Ele morreu bobão");
         }
     }
 
