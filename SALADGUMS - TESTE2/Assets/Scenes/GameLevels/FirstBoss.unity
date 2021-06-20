@@ -3757,7 +3757,7 @@ MonoBehaviour:
   damageScreen: {fileID: 26378228}
   idleMoveSpeed: 10
   idleMoveDirection: {x: -1, y: 2}
-  attackMoveSpeed: 20
+  attackMoveSpeed: 25
   attackMoveDirection: {x: -1, y: 5}
   attackPlayerSpeed: 25
   player: {fileID: 974892726}
@@ -3770,7 +3770,7 @@ MonoBehaviour:
     m_Bits: 256
   prefabShoot: {fileID: 8517427640654658662, guid: 7889489bedabff646bf0b01cb631b4fc, type: 3}
   minShoot: -6
-  maxShoot: 14
+  maxShoot: 9
   heightShoot: 15
   timerSpawn: 1
   timeStart: 1
