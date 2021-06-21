@@ -120,7 +120,7 @@ public class Boss : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            PlayerManager.currentHealth -= 10;
+            PlayerManager.currentHealth -= 15;
             damageScreen.enabled = true;
         }
     }

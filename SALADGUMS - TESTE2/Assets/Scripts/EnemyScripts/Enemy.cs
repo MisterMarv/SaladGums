@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
 
     private string currentState = "IdleState";
     private Transform target;
+    private Rigidbody enemyRigidbody;
 
     public float chaseRange = 5;
     public float attackRange = 2;
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyRigidbody = GetComponent<Rigidbody>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         health = maxHealth;
     }
@@ -89,6 +91,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        enemyRigidbody.isKinematic = true;
         //Play death animation
         animator.SetTrigger("IsDead");
 
