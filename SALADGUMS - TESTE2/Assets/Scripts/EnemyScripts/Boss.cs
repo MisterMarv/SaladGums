@@ -43,6 +43,7 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentLifeBoss = 100;
         InvokeRepeating("BulletRain", timerSpawn, timeStart);
         idleMoveDirection.Normalize();
         attackMoveDirection.Normalize();
