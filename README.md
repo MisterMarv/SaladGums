@@ -1,2 +1,2 @@
-# SaladGums
+# SaladGum
 (EM EDIÇÃO)
