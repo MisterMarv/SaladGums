@@ -18,16 +18,19 @@ public class Projectile : MonoBehaviour
     {
         if (differentEquip == 1)
         {
+            print("oh no 1");
             damageEffect.SetActive(true);
             damageAmount = 40;
         }
         else if (differentEquip == 2)
         {
+            print("oh no 2");
             damageEffectTwo.SetActive(true);
             damageAmount = 60;
         }
         else if (differentEquip == 3)
         {
+            print("oh no 3");
             damageEffectThree.SetActive(true);
             damageAmount = 20;
         }
@@ -41,18 +44,21 @@ public class Projectile : MonoBehaviour
             {
                 Instantiate(damageEffect, transform.position, damageEffect.transform.rotation);
                 other.GetComponent<Enemy>().TakeDamage(damageAmount);
+                print("AIAI");
                 Destroy(gameObject);
             }
             else if (differentEquip == 2)
             {
                 Instantiate(damageEffectTwo, transform.position, damageEffectTwo.transform.rotation);
                 other.GetComponent<Enemy>().TakeDamage(damageAmount);
+                print("AIAI");
                 Destroy(gameObject);
             }
             else if (differentEquip == 3)
             {
                 Instantiate(damageEffectThree, transform.position, damageEffectThree.transform.rotation);
                 other.GetComponent<Enemy>().TakeDamage(damageAmount);
+                print("AIAI");
                 Destroy(gameObject);
             }
         }
