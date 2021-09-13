@@ -44,21 +44,18 @@ public class Projectile : MonoBehaviour
             {
                 Instantiate(damageEffect, transform.position, damageEffect.transform.rotation);
                 other.GetComponent<Enemy>().TakeDamage(damageAmount);
-                print("AIAI");
                 Destroy(gameObject);
             }
             else if (differentEquip == 2)
             {
                 Instantiate(damageEffectTwo, transform.position, damageEffectTwo.transform.rotation);
                 other.GetComponent<Enemy>().TakeDamage(damageAmount);
-                print("AIAI");
                 Destroy(gameObject);
             }
             else if (differentEquip == 3)
             {
                 Instantiate(damageEffectThree, transform.position, damageEffectThree.transform.rotation);
                 other.GetComponent<Enemy>().TakeDamage(damageAmount);
-                print("AIAI");
                 Destroy(gameObject);
             }
         }
